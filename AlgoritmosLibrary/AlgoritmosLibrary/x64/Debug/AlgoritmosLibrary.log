@@ -1,0 +1,15 @@
+﻿  AlgoritmosLibrary.cpp
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(41,9): warning C4273: 'haversine': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(54,25): warning C4273: 'calcularDistancias': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(55,23): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(82,14): warning C4273: 'Prim': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(83,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(122,14): warning C4273: 'Greedy': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(123,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(155,14): warning C4273: 'Dijkstra': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(156,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(227,14): warning C4273: 'Kruskal': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(228,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(271,7): warning C4273: 'imprimirRuta': vinculación de DLL incoherente
+C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\AlgoritmosLibrary\AlgoritmosLibrary.cpp(282,9): warning C4273: 'calcularKMruta': vinculación de DLL incoherente
+  AlgoritmosLibrary.vcxproj -> C:\Users\rodri\OneDrive\Escritorio\ADA\AlgoritmosLibrary\x64\Debug\AlgoritmosLibrary.dll
