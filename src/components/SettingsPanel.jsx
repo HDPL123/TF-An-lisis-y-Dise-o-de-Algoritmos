@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDrop } from 'react-dnd';
 import Modal from './Modal';
 import SavedRoutesModal from './SavedRoutesModal';
+import axios from 'axios';
 
 const ItemType = 'CITY';
 
-const SettingsPanel = ({ droppedItems, setDroppedItems, selectedAlgorithm, setSelectedAlgorithm }) => { 
+const SettingsPanel = ({ droppedItems, setDroppedItems, selectedAlgorithm, setSelectedAlgorithm }) => {
   const [, drop] = useDrop(() => ({
     accept: ItemType,
     drop: (item) => {
@@ -25,6 +26,25 @@ const SettingsPanel = ({ droppedItems, setDroppedItems, selectedAlgorithm, setSe
   const [savedRoutes, setSavedRoutes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [algorithms, setAlgorithms] = useState([]); // Nuevo estado para los algoritmos
+  const staticAlgorithms = [
+    { id: 'Dijkstra', name: 'Dijkstra' },
+    { id: 'Kruskal', name: 'Kruskal' },
+    { id: 'Prim', name: 'Prim' },
+    { id: 'Greedy', name: 'Greedy' }
+  ];
+
+  // useEffect para cargar los algoritmos desde la API
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/algoritmos')
+      .then(response => {
+        setAlgorithms(response.data); // Establecer los algoritmos obtenidos de la API
+      })
+      .catch(error => {
+        console.error('Error al cargar los algoritmos:', error);
+        setAlgorithms(staticAlgorithms); // Usar los algoritmos estáticos si falla la API
+      });
+  }, []);
 
   const getRoute = async () => {
     setLoading(true);
@@ -79,7 +99,6 @@ const SettingsPanel = ({ droppedItems, setDroppedItems, selectedAlgorithm, setSe
     setShowSavedRoutesModal(true);
   };
 
-  // Función para editar el nombre de la ruta
   const onEditRoute = (index, newName) => {
     setSavedRoutes((prevRoutes) => {
       const updatedRoutes = [...prevRoutes];
@@ -88,7 +107,6 @@ const SettingsPanel = ({ droppedItems, setDroppedItems, selectedAlgorithm, setSe
     });
   };
 
-  // Función para eliminar una ruta
   const onDeleteRoute = (index) => {
     setSavedRoutes((prevRoutes) => prevRoutes.filter((_, idx) => idx !== index));
   };
@@ -104,9 +122,12 @@ const SettingsPanel = ({ droppedItems, setDroppedItems, selectedAlgorithm, setSe
         className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <option value="">Selecciona un algoritmo</option>
-        <option value="Algoritmo 1">Algoritmo 1</option>
-        <option value="Algoritmo 2">Algoritmo 2</option>
-        <option value="Algoritmo 3">Algoritmo 3</option>
+        {/* Aquí se muestran los algoritmos ya sea de la API o de los estáticos */}
+        {algorithms.map((algo) => (
+          <option key={algo.id} value={algo.id}>
+            {algo.name}
+          </option>
+        ))}
       </select>
 
       {/* Destinos */}
